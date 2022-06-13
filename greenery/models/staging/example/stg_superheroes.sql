@@ -19,3 +19,6 @@ FROM
         'tutorial',
         'superheroes'
     ) }}
+WHERE
+    height > 0
+    AND weight > 0
