@@ -24,3 +24,5 @@ sources:
       - name: orders
         loaded_at_field: created_at
       - name: order_items
+      - name: events
+        loaded_at_field: created_at
