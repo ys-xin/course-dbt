@@ -21,3 +21,5 @@ sources:
         loaded_at_field: created_at
       - name: promos
       - name: products
+      - name: orders
+        loaded_at_field: created_at
