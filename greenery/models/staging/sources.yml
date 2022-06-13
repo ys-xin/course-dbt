@@ -20,3 +20,4 @@ sources:
       - name: users
         loaded_at_field: created_at
       - name: promos
+      - name: products

@@ -53,3 +53,18 @@ models:
         description: Absolute dollar amount that is given off with the code
       - name: status
         description: Is the promo code active or disabled
+
+  - name: stg_products
+    description: "Products Table"
+    columns:
+      - name: product_id
+        description: UUID for each unique product on platform
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: Name of the product
+      - name: price
+        description: Price of the product
+      - name: inventory
+        description: Amount of the inventory we have for this product
