@@ -17,3 +17,5 @@ sources:
 
     tables:
       - name: addresses
+      - name: users
+        loaded_at_field: created_at 
