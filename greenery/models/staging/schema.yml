@@ -40,6 +40,10 @@ models:
         description: timestamp the user was last updated
       - name: address_id
         description: default delivery address for the user
+        tests:
+          - relationships:
+              to: ref("stg_addresses")
+              field: address_id
 
   - name: stg_promos
     description: "Promos Table"
@@ -81,8 +85,16 @@ models:
         description: UserId of the user that placed this order
       - name: promo_id
         description: PromoId if any was used in the order
+        tests:
+          - relationships:
+              to: ref("stg_promos")
+              field: promo_id
       - name: address_id
         description: Delivery address for this order
+        tests:
+          - relationships:
+              to: ref("stg_addresses")
+              field: address_id
       - name: created_at
         description: Timestamp when the order was created
       - name: order_cost
@@ -107,8 +119,16 @@ models:
     columns:
       - name: order_id
         description: OrderId of this order
+        tests:
+          - relationships:
+              to: ref("stg_orders")
+              field: order_id
       - name: product_id
         description: ProductId of a single item in this order
+        tests:
+          - relationships:
+              to: ref("stg_products")
+              field: product_id
       - name: quantity
         description: Number of units of the product in this order
 
@@ -132,5 +152,13 @@ models:
         description: Type of event
       - name: order_id
         description: If the event is specific to an order (mostly used for checkout)
+        tests:
+          - relationships:
+              to: ref("stg_orders")
+              field: order_id
       - name: product_id
         description: If the event is specific to a product
+        tests:
+          - relationships:
+              to: ref("stg_products")
+              field: product_id

@@ -2,7 +2,7 @@ WITH users AS (
     SELECT * FROM {{ ref("dim_users") }}
 ),
 orders AS (
-    SELECT * FROM {{ ref("fact_orders") }}
+    SELECT * FROM {{ ref("fct_orders") }}
 ),
 order_counts_by_user AS (
     SELECT
