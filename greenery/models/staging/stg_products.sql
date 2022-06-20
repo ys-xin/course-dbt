@@ -10,7 +10,7 @@ WITH source AS (
 renamed AS (
     SELECT
         product_id,
-        NAME,
+        name,
         price,
         inventory
     FROM
